@@ -69,19 +69,17 @@ console.log(fullNames);
 // The event director needs to have all the runners' first names in uppercase because the director BECAME DRUNK WITH POWER. Populate an array called `firstNamesAllCaps`. This array will contain just strings.
 let firstNamesAllCaps = [];
 
-const names = runners.map((person) => {
-  return firstNamesAllCaps.push(person.first_name.toUpperCase())
-})
+  runners.map(function (person) {
+  return person.first_name.toUpperCase()
+});
 
 console.log(firstNamesAllCaps);
 
 // ==== Challenge 3: Use .filter() ====
-// The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.
-let runnersLargeSizeShirt = [];
-
-largeShirts = runners.filter((person) => {
-  return person.shirt_size === "L"
-});
+//* The large shirts won't be available for the event due to an ordering issue. We need a filtered version of the runners array, containing only those runners with large sized shirts so they can choose a different size. This will be an array of objects.*//
+  const runnersLargeSizeShirt = runners.filter(item => {
+    return item.shirt_size === "L";
+  });
 
 console.log(runnersLargeSizeShirt);
 
@@ -100,32 +98,27 @@ console.log(ticketPriceTotal);
 
 // Problem 1 - CHEAPSKATE - Make a list of those who donated less than $100.
 
-let frugal = [];
-
-frugal = runners.filter((person) => {
-  return person.donation < 100
-});
+  const frugal = runners.filter(item => {
+   return item.donation > 100;
+  });
 
 console.log(frugal);
 
 // Problem 2 - TOPLESS TINIES - The factory is out of XS small shirts! 
 
-let runnersTinySizeShirt = [];
+  const small = runners.filter(item => {
+    return item.shirt_size === "XS";
+  });
 
-tinyShirts = runners.filter((person) => {
-  return person.shirt_size === "XS"
-});
-
-console.log(runnersTinySizeShirt);
+console.log(small);
 
 
 // Problem 3 -  EMAIL - Get all the email addresses in ALL CAPS for anyone's eyes.
 
-let emailAllCaps = [];
 
 const names = runners.map((person) => {
-  return emailAllCaps.push(person.email.toUpperCase())
+  return person.email.toUpperCase();
 })
 
-console.log(emailAllCaps);
+console.log(names);
 
